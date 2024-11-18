@@ -10,4 +10,9 @@ app.controller("balancesController", function($scope) {
   	alert("add new called!")
     $scope.users.push({"name": "Steve Wozniac", "balance": 50000000});
   }
+  
+  $scope.remove = function(index) {
+  	alert("deleting index " + index)
+    $scope.users.splice(index, 1);
+  }
 });

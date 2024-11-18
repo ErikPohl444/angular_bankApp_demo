@@ -2,8 +2,9 @@
     <ul ng-controller="balancesController">
       <li ng-repeat="user in users | orderBy: 'balance'">
         {{user.name | uppercase}} - {{user.balance | currency}}
+        <a href="#" ng-click="remove($index)">Delete</a>
       </li>
       <li> <button ng-click="addNew()">Add new user</button>
       </li>
     </ul>
-</div>
+  </div>

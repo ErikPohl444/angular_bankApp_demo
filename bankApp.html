@@ -1,0 +1,7 @@
+<div ng-app="bankApp">
+    <ul ng-controller="balancesController">
+      <li ng-repeat="user in users | orderBy: 'balance'">
+        {{user.name | uppercase}} - {{user.balance | currency}}
+      </li>
+    </ul>
+</div>

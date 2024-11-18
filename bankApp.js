@@ -5,4 +5,8 @@ app.controller("balancesController", function($scope) {
     {"name": "Jimmy Verde", "balance": 1923},
     {"name": "Hugo Chang", "balance":1289}
   ];
+  
+  $scope.addNew = function() {
+  	alert("add new called!")
+  }
 });

@@ -3,5 +3,7 @@
       <li ng-repeat="user in users | orderBy: 'balance'">
         {{user.name | uppercase}} - {{user.balance | currency}}
       </li>
+      <li> <button ng-click="addNew()">Add new user</button>
+      </li>
     </ul>
-</div>
+  </div>

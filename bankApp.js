@@ -8,5 +8,6 @@ app.controller("balancesController", function($scope) {
   
   $scope.addNew = function() {
   	alert("add new called!")
+    $scope.users.push({"name": "Steve Wozniac", "balance": 50000000});
   }
 });

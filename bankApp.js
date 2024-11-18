@@ -11,7 +11,8 @@ app.controller("balancesController", function($scope) {
     $scope.users.push({"name": "Steve Wozniac", "balance": 50000000});
   }
   
-  $scope.remove = function(index) {
+  $scope.remove = function(user) {
+  	var index = $scope.users.indexOf(user)
   	alert("deleting index " + index)
     $scope.users.splice(index, 1);
   }

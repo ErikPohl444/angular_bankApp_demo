@@ -16,4 +16,10 @@ app.controller("balancesController", function($scope) {
   	alert("deleting index " + index)
     $scope.users.splice(index, 1);
   }
+  
+  $scope.edit = function(user) {
+  	$scope.current = user;
+  }
+  
+  $scope.current = {};
 });

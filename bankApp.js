@@ -1,25 +1,15 @@
-var app = angular.module("bankApp", []);
-app.controller("balancesController", function($scope) {
-	$scope.users = [
-  	{"name": "Pricilla Smith", "balance": 1191},
-    {"name": "Jimmy Verde", "balance": 1923},
-    {"name": "Hugo Chang", "balance":1289}
-  ];
-  
-  $scope.addNew = function() {
-  	alert("add new called!")
-    $scope.users.push({"name": "Steve Wozniac", "balance": 50000000});
-  }
-  
-  $scope.remove = function(user) {
-  	var index = $scope.users.indexOf(user)
-  	alert("deleting index " + index)
-    $scope.users.splice(index, 1);
-  }
-  
-  $scope.edit = function(user) {
-  	$scope.current = user;
-  }
-  
-  $scope.current = {};
-});
+<div ng-app="bankApp">
+  <ul ng-controller="balancesController">
+    <li ng-repeat="user in users | orderBy: 'balance'">
+      {{user.name | uppercase}} - {{user.balance | currency}}
+      <a href="#" ng-click="remove(user)">Delete</a>
+      <a href="#" ng-click="edit(user)">Edit</a>
+    </li>
+    <li> <input type="text" id="name" ng-model="current.name" value="{{current.name}}"></li>
+    <li> <input type="text" id="balance" ng-model="current.balance" value="{{current.balance}}"></li>
+    <li>
+      <button ng-click="save(current)">Save</button>    
+      <button ng-click="addNew(current)">Add new user</button>
+    </li>
+  </ul>
+</div>
